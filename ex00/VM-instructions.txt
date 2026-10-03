@@ -1,0 +1,17 @@
+Check if the postgresql service is up:
+	sudo systemctl status postgresql
+If the postgresql service is not active:
+	sudo systemctl start postgresql
+	sudo systemctl enable postgresql
+1.- log into postgres with the admin user:
+	sudo -i -u postgres
+	psql
+2.- Create a user, database and set the corresponding priviledges:
+	CREATE USER juetxeba WITH PASSWORD 'mysecretpassword';
+	CREATE DATABASE piscineds OWNER juetxeba;
+	GRANT ALL PRIVILEGES ON DATABASE piscineds TO juetxeba;
+3.- exit postgres
+	\q
+	exit
+4.- Test the connection
+	psql -U myuser -d mydb -h localhost -W

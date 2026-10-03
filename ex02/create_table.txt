@@ -1,0 +1,14 @@
+Connect to the database:
+	psql -h localhost -U juetxeba -d piscineds -W
+Create the schema:
+	CREATE SCHEMA IF NOT EXISTS "table";
+Create table based in the csv fields:
+	CREATE TABLE "table".data_2022_oct(
+	event_time TIMESTAMP WITH TIME ZONE,
+	event_type VARCHAR(50),
+	product_id BIGINT,
+	price DECIMAL(10,2),
+	user_id INT,
+	user_session UUID);
+Import data from csv:
+	\copy "table".data_2022_oct FROM '../../subject/customer/data_2022-oct.csv' WITH (FORMAT csv, HEADER true);

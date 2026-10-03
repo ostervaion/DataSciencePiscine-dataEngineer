@@ -1,0 +1,3 @@
+Installed using flatpak
+flatpak install dbeaver
+choose the app option of the 3 offered with the postgres plugin
